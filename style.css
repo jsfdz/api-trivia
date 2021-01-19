@@ -1,0 +1,19 @@
+.hidden {
+  display: none;
+}
+
+#progress-bar {
+  background: #71e971;
+  height: 1px;
+  min-width: 0px;
+}
+
+.correct {
+  background: rgba(111, 243, 111, 0.425);
+  color: green;
+}
+
+.incorrect {
+  background: rgba(250, 72, 72, 0.452);
+  color: red;
+}
