@@ -141,6 +141,8 @@ getNewQuestion = () => {
         `
     })
 
+    html += `<div class="hidden"><span>${currentQuestion.correct_answer}</span></div>`
+
     answersContent.innerHTML = html
 
     avaiilableQuestion.splice(questionsIndex, 1)
@@ -152,10 +154,11 @@ d.addEventListener('click', e => {
         if (!acceptingAnswers) return
 
         acceptingAnswers = false
-        const selectChoise = e.target
-        const selectAnswer = selectChoise.value
+        const selectChoise = e.target,
+            selectAnswer = selectChoise.value,
+            correctAnswer = e.path[2].lastElementChild.children[0].innerText
 
-        let classToApply = selectAnswer == currentQuestion.correct_answer ? 'correct' : 'incorrect'
+        let classToApply = selectAnswer == correctAnswer ? 'correct' : 'incorrect'
 
         if (classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
