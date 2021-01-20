@@ -130,11 +130,11 @@ getNewQuestion = () => {
     console.log(currentQuestion.correct_answer);
 
     let html = ''
-    answers.forEach(answer => {
+    answers.forEach((answer, i) => {
         html += `
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="${answer}" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
+            <input class="form-check-input" type="checkbox" value="${answer}" id="flexCheckDefault${i}">
+                <label class="form-check-label" for="flexCheckDefault${i}">
                     ${answer}
                 </label>
         </div>
@@ -148,7 +148,7 @@ getNewQuestion = () => {
 }
 
 d.addEventListener('click', e => {
-    if (e.target.matches('#flexCheckDefault')) {
+    if (e.target.matches('.form-check input')) {
         if (!acceptingAnswers) return
 
         acceptingAnswers = false
