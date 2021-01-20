@@ -1,3 +1,5 @@
+console.log('🤓 hi erik, the following console logs, are just for testing in evaluation');
+
 const d = document,
     start = d.getElementById('start'),
     game = d.getElementById('game'),
@@ -57,7 +59,7 @@ getQuestions = () => {
 }
 
 startGame = questions => {
-    console.log('FETCH API:');
+    console.log('🚀 FETCH API:');
     console.log(questions);
     questionCounter = 0
     score = 0
@@ -118,7 +120,7 @@ getNewQuestion = () => {
     currentQuestion = avaiilableQuestion[questionsIndex]
     question.innerHTML = currentQuestion.question
 
-    console.log('Question:');
+    console.log('📢 Question:');
     console.log(currentQuestion.question);
 
     const answers = []
@@ -126,7 +128,7 @@ getNewQuestion = () => {
     answers.push(currentQuestion.correct_answer)
     answers.sort(() => Math.random() - 0.5)
 
-    console.log('Correct Answer:');
+    console.log('💡 Correct Answer:');
     console.log(currentQuestion.correct_answer);
 
     let html = ''
