@@ -152,13 +152,13 @@ getNewQuestion = () => {
 }
 
 d.addEventListener('click', e => {
-    if (e.target.matches('.form-check input')) {
+    if (e.target.matches('#answers-container .form-check input')) {
         if (!acceptingAnswers) return
 
         acceptingAnswers = false
         const selectChoise = e.target,
             selectAnswer = selectChoise.value,
-            correctAnswer = e.path[2].lastElementChild.children[0].innerText
+            correctAnswer = d.querySelector('.hidden span').textContent
 
         let classToApply = selectAnswer == correctAnswer ? 'correct' : 'incorrect'
 
